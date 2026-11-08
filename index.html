@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetalCraft | Local Florist Fresh Flower Bouquet Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">
+        <span class="brand-icon">🌸</span>
+        <div><h1 class="brand-title">PetalCraft Florist</h1><p class="brand-tagline">Fresh Flower Bouquet Builder & Local Delivery</p></div>
+      </div>
+      <div class="header-badges">
+        <span class="badge">🌿 100% Farm-Fresh</span>
+        <span class="badge">🚚 FREE Delivery (Min Order ₹129)</span>
+        <a href="tel:+919773006980" class="badge support-badge">📞 +91 97730 06980</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="main-container">
+    <div class="builder-column">
+
+      <!-- Step 1: Flower Stems -->
+      <section class="card-section" id="stemSelectorSection">
+        <div class="section-heading">
+          <span class="step-pill">Step 1</span>
+          <div><h2>Select Fresh Flower Stems</h2><p>Pick your favorite blooms to craft your bouquet.</p></div>
+        </div>
+        <div class="flowers-grid">
+          <article class="flower-card" data-flower="rose">
+            <div class="flower-icon-wrap rose-bg">🌹</div>
+            <div class="flower-info"><h3>Red Roses</h3><p class="flower-desc">Classic velvet red local roses</p><span class="flower-price">₹30 <small>/ stem</small></span></div>
+            <div class="qty-control"><button type="button" class="btn-qty" onclick="changeQty('rose', -1)">-</button><span class="qty-display" id="qty-rose">0</span><button type="button" class="btn-qty" onclick="changeQty('rose', 1)">+</button></div>
+          </article>
+          <article class="flower-card" data-flower="lily">
+            <div class="flower-icon-wrap lily-bg">🤍</div>
+            <div class="flower-info"><h3>White Lilies</h3><p class="flower-desc">Sweetly fragrant exotic white lilies</p><span class="flower-price">₹70 <small>/ stem</small></span></div>
+            <div class="qty-control"><button type="button" class="btn-qty" onclick="changeQty('lily', -1)">-</button><span class="qty-display" id="qty-lily">0</span><button type="button" class="btn-qty" onclick="changeQty('lily', 1)">+</button></div>
+          </article>
+          <article class="flower-card" data-flower="carnation">
+            <div class="flower-icon-wrap carnation-bg">🌸</div>
+            <div class="flower-info"><h3>Pink Carnations</h3><p class="flower-desc">Long-lasting ruffled blush petals</p><span class="flower-price">₹35 <small>/ stem</small></span></div>
+            <div class="qty-control"><button type="button" class="btn-qty" onclick="changeQty('carnation', -1)">-</button><span class="qty-display" id="qty-carnation">0</span><button type="button" class="btn-qty" onclick="changeQty('carnation', 1)">+</button></div>
+          </article>
+          <article class="flower-card" data-flower="sunflower">
+            <div class="flower-icon-wrap sunflower-bg">🌻</div>
+            <div class="flower-info"><h3>Yellow Sunflowers</h3><p class="flower-desc">Radiant golden sunny Indian blooms</p><span class="flower-price">₹50 <small>/ stem</small></span></div>
+            <div class="qty-control"><button type="button" class="btn-qty" onclick="changeQty('sunflower', -1)">-</button><span class="qty-display" id="qty-sunflower">0</span><button type="button" class="btn-qty" onclick="changeQty('sunflower', 1)">+</button></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Step 2: Wrapping Dropdown -->
+      <section class="card-section" id="wrappingSection">
+        <div class="section-heading">
+          <span class="step-pill">Step 2</span>
+          <div><h2>Choose Wrapping & Container</h2><p>Select the presentation style for your arrangement.</p></div>
+        </div>
+        <div class="wrapping-select-group">
+          <label for="wrappingSelect" class="form-label">Wrapping Option <span class="req">*</span></label>
+          <select id="wrappingSelect" class="form-select" onchange="updateSummary()">
+            <option value="kraft" selected>📜 Kraft Paper Rustic (+₹49)</option>
+            <option value="satin">🎀 Luxury Satin Wrap (+₹99)</option>
+            <option value="vase">🏺 Handmade Glass Vase (+₹199)</option>
+            <option value="basket">🧺 Artisan Woven Basket (+₹249)</option>
+          </select>
+          <div class="wrap-preview-badge">
+            <span class="wrap-badge-icon" id="wrapPreviewIcon">📜</span>
+            <div><strong id="wrapPreviewTitle">Kraft Paper Rustic (+₹49)</strong><p id="wrapPreviewDesc">Eco-friendly wrap with raw jute twine string</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 3: Delivery Form -->
+      <section class="card-section" id="deliverySection">
+        <div class="section-heading">
+          <span class="step-pill">Step 3</span>
+          <div><h2>Delivery Details & Card Message</h2><p>Enter recipient and schedule information for courier delivery.</p></div>
+        </div>
+        <form id="orderForm" onsubmit="handleOrderSubmit(event)" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="recipientName">Recipient Name <span class="req">*</span></label>
+              <input type="text" id="recipientName" placeholder="e.g. Priya Sharma" required>
+            </div>
+            <div class="form-group">
+              <label for="recipientPhone">Recipient Mobile <span class="req">*</span></label>
+              <div class="phone-input-wrap">
+                <span class="country-prefix">+91</span>
+                <input type="tel" id="recipientPhone" placeholder="9876543210" maxlength="10" required>
+                <button type="button" class="btn-otp" id="btnSendOtp" onclick="sendOtp()">Send OTP</button>
+              </div>
+              <span class="phone-verified-tag" id="phoneVerifiedTag" style="display: none;">✓ Verified</span>
+            </div>
+            <div class="form-group full-width" id="otpBox" style="display: none;">
+              <div class="otp-card">
+                <div class="otp-card-top"><span>🔐 4-Digit Verification OTP</span><span class="otp-demo-badge" id="otpDemoCode">Demo OTP: 1234</span></div>
+                <div class="otp-input-row">
+                  <input type="text" id="otpInput" maxlength="4" placeholder="Enter 4-digit OTP" class="otp-field">
+                  <button type="button" class="btn-verify" onclick="verifyOtp()">Verify OTP</button>
+                </div>
+                <small class="otp-hint-text">Enter the demo OTP code above to confirm phone ownership.</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="deliveryDate">Delivery Date <span class="req">*</span></label>
+              <input type="date" id="deliveryDate" required>
+            </div>
+            <div class="form-group">
+              <label for="timeSlot">Delivery Time Slot <span class="req">*</span></label>
+              <select id="timeSlot" required>
+                <option value="">Select preferred time slot</option>
+                <option value="Morning (09:00 AM - 12:00 PM)">Morning (09:00 AM - 12:00 PM)</option>
+                <option value="Afternoon (01:00 PM - 04:00 PM)">Afternoon (01:00 PM - 04:00 PM)</option>
+                <option value="Evening (05:00 PM - 08:00 PM)">Evening (05:00 PM - 08:00 PM)</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label for="deliveryAddress">Complete Delivery Address <span class="req">*</span></label>
+              <textarea id="deliveryAddress" rows="2" placeholder="Street address, hostel/room no., landmark" required></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label for="giftMessage">Optional Gift Card Note <span class="char-hint">(Complimentary Handwritten Card)</span></label>
+              <textarea id="giftMessage" rows="2" placeholder="Write a personalized message for handwritten card..."></textarea>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Live Order Summary Sidebar -->
+    <aside class="summary-column">
+      <div class="summary-sticky-card">
+        <h2 class="summary-title">Live Order Summary</h2>
+        <p class="summary-subtitle">Real-time bouquet calculation</p>
+        <div class="summary-block">
+          <span class="summary-label">Selected Flowers</span>
+          <ul class="stems-list" id="stemsList"><li class="empty-state">No flower stems added yet. Click + above!</li></ul>
+        </div>
+        <div class="divider"></div>
+        <div class="summary-line"><span>Packaging: <strong id="summaryPackagingName">Kraft Paper Rustic</strong></span><span id="summaryPackagingCost">₹49</span></div>
+        <div class="summary-line"><span>Campus Delivery</span><span id="summaryDeliveryFee"><strong style="color:#059669">FREE</strong></span></div>
+        <div class="summary-line"><span>Stems Subtotal</span><span id="summaryStemSubtotal">₹0</span></div>
+        <div class="divider"></div>
+        <div class="summary-total-line">
+          <div><span class="total-label">Grand Total</span><small class="total-hint">Includes taxes & free delivery</small></div>
+          <span class="total-price" id="grandTotal">₹49</span>
+        </div>
+        <div class="min-order-hint" id="minOrderHint">⚠️ Min order value is ₹129. Add ₹80 more to checkout.</div>
+        <button type="button" class="btn-checkout" id="btnCheckout" onclick="handleOrderSubmit(event)">Schedule & Place Delivery 💐</button>
+        <div class="summary-footer-perks"><span>💧 Fresh water pack</span><span>🔒 Cash / UPI on Delivery</span></div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Tax Invoice Modal -->
+  <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-badge-check">✓</div>
+        <span class="status-chip">Order Placed Successfully!</span>
+        <h2 id="modalTitle">Flower Delivery Confirmed</h2>
+        <p class="modal-desc">Thank you! Your tracking details and bill receipt are generated below.</p>
+      </div>
+      <div class="printable-invoice" id="printableInvoice"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" onclick="window.print()">🖨️ Print / Save Bill</button>
+        <button type="button" class="btn-primary" onclick="closeModal()">🌸 Place Another Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Store Address & Map Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-store-grid">
+        <div class="support-card">
+          <div class="support-header"><span class="support-icon">🌸</span><div><span class="support-label">Campus Florist Boutique</span><h3 class="store-name">PetalCraft Florist — Campus Store</h3></div></div>
+          <address class="store-address">📍 <strong>Store Address:</strong><br>Shop No. G-12, Ground Floor, Near Block 34 (School of Computer Engineering),<br>Lovely Professional University (LPU), Punjab 144411</address>
+          <div class="support-contact-row">
+            <div><span class="contact-mini-label">Customer Care:</span><a href="tel:+919773006980" class="support-phone">+91 97730 06980</a></div>
+            <div class="support-hours">🗓️ Mon–Fri: 9 AM–9 PM • Sat–Sun: 10 AM–5 PM</div>
+          </div>
+        </div>
+        <div class="map-card">
+          <div class="map-card-header"><span>🗺️ Campus Store Location (Block 34, LPU)</span></div>
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.8963053992857!2d75.70218537587695!3d31.25129377433827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5f666a524c0b%3A0x196fbb45828c029a!2sBlock%2034%20-%20School%20of%20Computer%20Engineering%2C%20Punjab%20144411!5e0!3m2!1sen!2sin!4v1794121090671!5m2!1sen!2sin" width="100%" height="190" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-info">
+        <p><strong>PetalCraft Local Florist Bouquet Builder</strong> • 1st Semester College Mini-Project</p>
+        <p class="footer-sub">Built using Semantic HTML5, CSS3 Flexbox/Grid, and Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
