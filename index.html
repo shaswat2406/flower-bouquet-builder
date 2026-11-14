@@ -11,6 +11,9 @@
 </head>
 <body>
 
+  <!-- Top Animated Flower Loading Bar -->
+  <div class="flower-top-loader" id="flowerTopLoader"><div class="flower-top-fill"><span class="flower-top-spin">🌸</span></div></div>
+
   <!-- Site Header -->
   <header class="site-header">
     <div class="header-container">
@@ -155,6 +158,11 @@
         <div class="summary-total-line">
           <div><span class="total-label">Grand Total</span><small class="total-hint">Includes taxes & free delivery</small></div>
           <span class="total-price" id="grandTotal">₹49</span>
+        </div>
+        <!-- Flower Bouquet Progress Loading Bar -->
+        <div class="flower-progress-box">
+          <div class="flower-progress-bar"><div class="flower-progress-fill" id="flowerProgressFill" style="width: 38%;"><span class="flower-progress-bud" id="flowerBudIcon">🌱</span></div></div>
+          <div class="flower-progress-text"><span id="flowerProgressStatus">Bouquet Growth: ₹49 / ₹129</span><span id="flowerProgressPct">38%</span></div>
         </div>
         <div class="min-order-hint" id="minOrderHint">⚠️ Min order value is ₹129. Add ₹80 more to checkout.</div>
         <button type="button" class="btn-checkout" id="btnCheckout" onclick="handleOrderSubmit(event)">Schedule & Place Delivery 💐</button>

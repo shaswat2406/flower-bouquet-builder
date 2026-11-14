@@ -10,7 +10,24 @@
   --font-serif: 'Playfair Display', Georgia, serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-body); background: var(--bg-page); color: var(--text-main); line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
+body { 
+  font-family: var(--font-body); 
+  background-color: var(--bg-page); 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23f472b6' fill-opacity='0.22'%3E%3Ccircle cx='15' cy='11.5' r='3.2'/%3E%3Ccircle cx='15' cy='18.5' r='3.2'/%3E%3Ccircle cx='11.5' cy='15' r='3.2'/%3E%3Ccircle cx='18.5' cy='15' r='3.2'/%3E%3C/g%3E%3Ccircle cx='15' cy='15' r='2.2' fill='%23f59e0b' fill-opacity='0.55'/%3E%3Cg fill='%23fb7185' fill-opacity='0.2'%3E%3Ccircle cx='45' cy='42' r='2.8'/%3E%3Ccircle cx='45' cy='48' r='2.8'/%3E%3Ccircle cx='42' cy='45' r='2.8'/%3E%3Ccircle cx='48' cy='45' r='2.8'/%3E%3C/g%3E%3Ccircle cx='45' cy='45' r='1.8' fill='%23f59e0b' fill-opacity='0.55'/%3E%3Ccircle cx='45' cy='15' r='1.8' fill='%2334d399' fill-opacity='0.25'/%3E%3Ccircle cx='15' cy='45' r='1.8' fill='%2334d399' fill-opacity='0.25'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  color: var(--text-main); 
+  line-height: 1.5; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+/* Flower Top Loading Bar */
+.flower-top-loader { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: rgba(168,66,82,0.1); z-index: 10000; overflow: visible; pointer-events: none; }
+.flower-top-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #f472b6, var(--primary)); position: relative; animation: topFlowerLoad 1.3s ease forwards; }
+.flower-top-spin { position: absolute; right: -10px; top: -8px; font-size: 1.1rem; animation: flowerSpin 1.2s linear infinite; }
+@keyframes topFlowerLoad { 0% { width: 0%; opacity: 1; } 80% { width: 95%; opacity: 1; } 100% { width: 100%; opacity: 0; } }
+@keyframes flowerSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 /* Header & Badges */
 .site-header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; box-shadow: var(--shadow-sm); }
@@ -99,6 +116,12 @@ body { font-family: var(--font-body); background: var(--bg-page); color: var(--t
 .total-label { font-size: 1.1rem; font-weight: 700; display: block; }
 .total-hint { font-size: 0.74rem; color: var(--text-muted); display: block; }
 .total-price { font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--primary); }
+.flower-progress-box { margin: 0.85rem 0 0.5rem; background: #fffafb; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.55rem 0.75rem; }
+.flower-progress-bar { width: 100%; height: 10px; background: #f3ece9; border-radius: var(--radius-full); position: relative; }
+.flower-progress-fill { height: 100%; background: linear-gradient(90deg, #f472b6, var(--primary)); border-radius: var(--radius-full); transition: width 0.3s ease; position: relative; }
+.flower-progress-fill.is-complete { background: linear-gradient(90deg, #34d399, #059669); }
+.flower-progress-bud { position: absolute; right: -9px; top: -6px; font-size: 1rem; transition: transform 0.2s; }
+.flower-progress-text { display: flex; justify-content: space-between; font-size: 0.74rem; font-weight: 700; color: var(--text-muted); margin-top: 0.35rem; }
 .min-order-hint { display: block; font-size: 0.76rem; font-weight: 600; color: #b45309; background: #fffbeb; padding: 0.45rem 0.65rem; border-radius: var(--radius-sm); border: 1px dashed #d97706; margin-bottom: 0.85rem; text-align: center; }
 .min-order-hint.min-order-met { color: #047857; background: #ecfdf5; border-color: #10b981; }
 .btn-checkout { width: 100%; padding: 0.9rem; border: none; border-radius: var(--radius-full); background: var(--primary); color: #fff; font-size: 0.98rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(168,66,82,0.3); transition: transform 0.2s; }

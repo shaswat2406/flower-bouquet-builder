@@ -65,6 +65,20 @@ function updateSummary() {
       : `⚠️ Add ₹${shortfall} more to reach minimum order value of ₹129`;
   }
 
+  // Update Flower Bouquet Progress Loading Bar
+  const pct = Math.min(100, Math.round((grandTotal / 129) * 100));
+  const progressFill = document.getElementById('flowerProgressFill');
+  const budIcon = document.getElementById('flowerBudIcon');
+  const progressStatus = document.getElementById('flowerProgressStatus');
+  const progressPct = document.getElementById('flowerProgressPct');
+  if (progressFill) {
+    progressFill.style.width = pct + '%';
+    progressFill.classList.toggle('is-complete', pct >= 100);
+    if (budIcon) budIcon.textContent = pct >= 100 ? '🌸' : (pct >= 70 ? '🌷' : (pct >= 40 ? '🌿' : '🌱'));
+    if (progressStatus) progressStatus.textContent = pct >= 100 ? '🎉 Bouquet Target Met!' : `Bouquet Target: ₹${grandTotal} / ₹129`;
+    if (progressPct) progressPct.textContent = pct + '%';
+  }
+
   if (document.getElementById('wrapPreviewIcon')) document.getElementById('wrapPreviewIcon').textContent = wrapIcon;
   if (document.getElementById('wrapPreviewTitle')) document.getElementById('wrapPreviewTitle').textContent = `${wrapName} (+₹${wrapPrice})`;
   if (document.getElementById('wrapPreviewDesc')) document.getElementById('wrapPreviewDesc').textContent = wrapDesc;

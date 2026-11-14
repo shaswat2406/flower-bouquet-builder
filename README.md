@@ -13,13 +13,18 @@ All pricing has been localized in **Indian Rupees (₹)** with realistic florist
 ## 📁 Project Structure & Code Line Counts
 ```text
 flower-bouquet-builder/
-├── index.html        # 211 lines - Semantic HTML5 (Header, 3-Step Builder, Phone OTP, Bill Modal, LPU Map)
-├── style.css         # 168 lines - Modern CSS3 (Variables, Flexbox, Grid, Min Order Meter, Print Styles)
-├── script.js         # 168 lines - Pure Vanilla JS (DOM Updates, Live Calculation, Basic 1234 OTP, MOV Logic)
+├── index.html        # 219 lines - Semantic HTML5 (Header, Top Loader, 3-Step Builder, Phone OTP, Bill Modal, LPU Map)
+├── style.css         # 191 lines - Modern CSS3 (Floral SVG Wallpaper, Flower Loading Bar, Grid, Print Styles)
+├── script.js         # 182 lines - Pure Vanilla JS (DOM Updates, Live Calculation, Flower Progress Bar, Basic 1234 OTP)
 └── README.md         # Project documentation & Viva examination Q&A guide
 ```
 
 ---
+
+## 🌸 Floral Background & Flower Loading Bar
+- **Ditsy Floral Pattern Background**: The page features a subtle, lightweight repeating SVG background pattern of delicate pastel flower blossoms (`🌸`, `🌼`, `🌱`) that adds an authentic boutique florist feel while keeping content cards crisp and readable.
+- **Top Flower Loading Bar**: An animated top progress bar glides smoothly across the top of the browser with a spinning `🌸` flower when the page loads.
+- **Interactive Bouquet Growth Bar**: In the Live Order Summary sidebar, a real-time progress bar tracks progress towards the ₹129 minimum order value. As blooms are added, the flower icon blooms from a seedling `🌱` ➔ `🌿` ➔ `🌷` ➔ full blooming flower `🌸`!
 
 ## 📱 Mobile Number & Instant OTP Verification
 - In **Step 3 (Delivery Details)**, users enter their 10-digit mobile number (`+91`).
