@@ -13,13 +13,18 @@ All pricing has been localized in **Indian Rupees (₹)** with realistic florist
 ## 📁 Project Structure & Code Line Counts
 ```text
 flower-bouquet-builder/
-├── index.html        # 219 lines - Semantic HTML5 (Header, Top Loader, 3-Step Builder, Phone OTP, Bill Modal, LPU Map)
-├── style.css         # 191 lines - Modern CSS3 (Floral SVG Wallpaper, Flower Loading Bar, Grid, Print Styles)
-├── script.js         # 182 lines - Pure Vanilla JS (DOM Updates, Live Calculation, Flower Progress Bar, Basic 1234 OTP)
+├── index.html        # 220 lines - Semantic HTML5 (Header, Dark/Light Switch, Top Loader, 3-Step Builder, Phone OTP, Bill Modal, LPU Map)
+├── style.css         # 218 lines - Modern CSS3 (CSS Variables, Dark Theme, Floral SVG Wallpaper, Flower Loading Bar, Grid, Print Styles)
+├── script.js         # 193 lines - Pure Vanilla JS (Theme Toggle & LocalStorage, DOM Updates, Live Calculation, Flower Progress Bar, Basic 1234 OTP)
 └── README.md         # Project documentation & Viva examination Q&A guide
 ```
 
 ---
+
+## 🌙 Dark & Light Mode Switch
+- **One-Click Theme Toggle**: Located in the top header (`🌙 Dark` / `☀️ Light`).
+- **CSS Custom Properties (`:root`)**: Instead of hardcoding colors, colors are defined as CSS variables (`--bg-page`, `--bg-card`, `--text-main`, `--border`). Toggling the `.dark-mode` class on `document.body` instantly switches the whole site from pastel peach/cream to a sophisticated dark velvet floral aesthetic.
+- **LocalStorage Persistence**: Uses browser `localStorage.setItem('petalcraft_theme', 'dark')` so that the user's theme preference is saved and restored automatically on page refresh.
 
 ## 🌸 Floral Background & Flower Loading Bar
 - **Ditsy Floral Pattern Background**: The page features a subtle, lightweight repeating SVG background pattern of delicate pastel flower blossoms (`🌸`, `🌼`, `🌱`) that adds an authentic boutique florist feel while keeping content cards crisp and readable.
@@ -78,6 +83,10 @@ Modern Indian on-demand apps (Swiggy, Zomato, Blinkit) use Mobile OTP authentica
 ### Q3: How did you embed the Google Map in your project?
 **Answer:**
 We used the HTML5 `<iframe>` tag with `loading="lazy"` and `referrerpolicy="strict-origin-when-cross-origin"`. It embeds the interactive map of our store location at Block 34 (School of Computer Engineering, LPU) directly into the page without external JavaScript libraries or API keys.
+
+### Q4: How is the Dark and Light mode switch implemented?
+**Answer:**
+We use modern CSS Custom Properties (`:root` variables) for all colors (`--bg-page`, `--bg-card`, `--text-main`, etc.). In JavaScript, the `toggleTheme()` function toggles the `.dark-mode` class on `document.body` (`document.body.classList.toggle('dark-mode')`). When active, CSS overrides the variable values, smoothly recoloring the entire UI without modifying individual elements. We also save the preference in `localStorage` so it persists across page reloads.
 
 ---
 
