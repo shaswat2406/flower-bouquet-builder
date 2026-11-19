@@ -8,9 +8,10 @@
 }
 
 body {
-  background-color: #f4f4f9;
+  background: linear-gradient(135deg, #fff0f3 0%, #f4f4f9 100%);
   color: #333333;
   padding: 20px;
+  min-height: 100vh;
 }
 
 .header {
@@ -58,6 +59,39 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 15px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.flower-item:last-child {
+  border-bottom: none;
+}
+
+.flower-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flower-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ebd8dc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.flower-info strong {
+  display: block;
+  font-size: 15px;
+  color: #222222;
+}
+
+.flower-price {
+  font-size: 13px;
+  color: #888888;
+  display: block;
 }
 
 .counter {
