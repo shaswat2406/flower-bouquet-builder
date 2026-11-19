@@ -35,7 +35,7 @@
     <div class="builder-column">
 
       <!-- Step 1: Flower Stems -->
-      <section class="card-section" id="stemSelectorSection">
+      <section class="card-section">
         <div class="section-heading">
           <span class="step-pill">Step 1</span>
           <div><h2>Select Fresh Flower Stems</h2><p>Pick your favorite blooms to craft your bouquet.</p></div>
@@ -65,7 +65,7 @@
       </section>
 
       <!-- Step 2: Wrapping Dropdown -->
-      <section class="card-section" id="wrappingSection">
+      <section class="card-section">
         <div class="section-heading">
           <span class="step-pill">Step 2</span>
           <div><h2>Choose Wrapping & Container</h2><p>Select the presentation style for your arrangement.</p></div>
@@ -86,7 +86,7 @@
       </section>
 
       <!-- Step 3: Delivery Form -->
-      <section class="card-section" id="deliverySection">
+      <section class="card-section">
         <div class="section-heading">
           <span class="step-pill">Step 3</span>
           <div><h2>Delivery Details & Card Message</h2><p>Enter recipient and schedule information for courier delivery.</p></div>
@@ -102,13 +102,13 @@
               <div class="phone-input-wrap">
                 <span class="country-prefix">+91</span>
                 <input type="tel" id="recipientPhone" placeholder="9876543210" maxlength="10" required>
-                <button type="button" class="btn-otp" id="btnSendOtp" onclick="sendOtp()">Send OTP</button>
+                <button type="button" class="btn-otp" onclick="sendOtp()">Send OTP</button>
               </div>
               <span class="phone-verified-tag" id="phoneVerifiedTag" style="display: none;">✓ Verified</span>
             </div>
             <div class="form-group full-width" id="otpBox" style="display: none;">
               <div class="otp-card">
-                <div class="otp-card-top"><span>🔐 4-Digit Verification OTP</span><span class="otp-demo-badge" id="otpDemoCode">Demo OTP: 1234</span></div>
+                <div class="otp-card-top"><span>🔐 4-Digit Verification OTP</span><span class="otp-demo-badge">Demo OTP: 1234</span></div>
                 <div class="otp-input-row">
                   <input type="text" id="otpInput" maxlength="4" placeholder="Enter 4-digit OTP" class="otp-field">
                   <button type="button" class="btn-verify" onclick="verifyOtp()">Verify OTP</button>
@@ -153,7 +153,7 @@
         </div>
         <div class="divider"></div>
         <div class="summary-line"><span>Packaging: <strong id="summaryPackagingName">Kraft Paper Rustic</strong></span><span id="summaryPackagingCost">₹49</span></div>
-        <div class="summary-line"><span>Campus Delivery</span><span id="summaryDeliveryFee"><strong style="color:#059669">FREE</strong></span></div>
+        <div class="summary-line"><span>Campus Delivery</span><span><strong style="color:#059669">FREE</strong></span></div>
         <div class="summary-line"><span>Stems Subtotal</span><span id="summaryStemSubtotal">₹0</span></div>
         <div class="divider"></div>
         <div class="summary-total-line">
@@ -166,7 +166,7 @@
           <div class="flower-progress-text"><span id="flowerProgressStatus">Bouquet Growth: ₹49 / ₹129</span><span id="flowerProgressPct">38%</span></div>
         </div>
         <div class="min-order-hint" id="minOrderHint">⚠️ Min order value is ₹129. Add ₹80 more to checkout.</div>
-        <button type="button" class="btn-checkout" id="btnCheckout" onclick="handleOrderSubmit(event)">Schedule & Place Delivery 💐</button>
+        <button type="button" class="btn-checkout" onclick="handleOrderSubmit(event)">Schedule & Place Delivery 💐</button>
         <div class="summary-footer-perks"><span>💧 Fresh water pack</span><span>🔒 Cash / UPI on Delivery</span></div>
       </div>
     </aside>
