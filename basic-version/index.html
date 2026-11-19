@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flower Bouquet Builder - Basic Version</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>🌸 PetalCraft - Flower Bouquet Builder</h1>
+    <p>1st Semester Web Development Mini-Project (Basic Version)</p>
+  </header>
+
+  <main class="container">
+    
+    <!-- Step 1: Select Flowers -->
+    <section class="card">
+      <h2>Step 1: Choose Your Flowers</h2>
+      <div class="flower-list">
+        
+        <div class="flower-item">
+          <span>🌹 Red Rose (₹30)</span>
+          <div class="counter">
+            <button type="button" onclick="changeQty('rose', -1)">-</button>
+            <span id="qty-rose">0</span>
+            <button type="button" onclick="changeQty('rose', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="flower-item">
+          <span>🤍 White Lily (₹70)</span>
+          <div class="counter">
+            <button type="button" onclick="changeQty('lily', -1)">-</button>
+            <span id="qty-lily">0</span>
+            <button type="button" onclick="changeQty('lily', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="flower-item">
+          <span>🌸 Pink Carnation (₹35)</span>
+          <div class="counter">
+            <button type="button" onclick="changeQty('carnation', -1)">-</button>
+            <span id="qty-carnation">0</span>
+            <button type="button" onclick="changeQty('carnation', 1)">+</button>
+          </div>
+        </div>
+
+        <div class="flower-item">
+          <span>🌻 Sunflower (₹50)</span>
+          <div class="counter">
+            <button type="button" onclick="changeQty('sunflower', -1)">-</button>
+            <span id="qty-sunflower">0</span>
+            <button type="button" onclick="changeQty('sunflower', 1)">+</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Step 2: Choose Packaging -->
+    <section class="card">
+      <h2>Step 2: Choose Wrapping</h2>
+      <label for="wrapSelect">Select Packaging Style:</label>
+      <select id="wrapSelect" onchange="calculateTotal()">
+        <option value="50">Kraft Paper Wrap (+₹50)</option>
+        <option value="100">Luxury Satin Ribbon (+₹100)</option>
+        <option value="200">Glass Vase (+₹200)</option>
+      </select>
+    </section>
+
+    <!-- Step 3: Delivery Info -->
+    <section class="card">
+      <h2>Step 3: Delivery Details</h2>
+      <div class="form-group">
+        <label for="custName">Customer Name:</label>
+        <input type="text" id="custName" placeholder="Enter full name">
+      </div>
+      <div class="form-group">
+        <label for="custPhone">Phone Number:</label>
+        <input type="tel" id="custPhone" placeholder="10-digit mobile number">
+      </div>
+      <div class="form-group">
+        <label for="custAddress">Delivery Address:</label>
+        <input type="text" id="custAddress" placeholder="Hostel / Room No. / City">
+      </div>
+    </section>
+
+    <!-- Step 4: Live Bill & Submit -->
+    <section class="card bill-card">
+      <h2>Order Bill</h2>
+      <p>Flowers Subtotal: <strong id="flowerSubtotal">₹0</strong></p>
+      <p>Packaging Cost: <strong id="packagingCost">₹50</strong></p>
+      <hr>
+      <h3>Grand Total: <span id="grandTotal">₹50</span></h3>
+      <button type="button" class="order-btn" onclick="placeOrder()">Confirm & Place Order 💐</button>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>PetalCraft Florist • Lovely Professional University (LPU) • Phone: +91 97730 06980</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
