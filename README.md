@@ -14,7 +14,7 @@ All pricing has been localized in **Indian Rupees (₹)** with realistic florist
 ```text
 flower-bouquet-builder/
 ├── index.html        # 217 lines - Semantic HTML5 (Header, Dark/Light Switch, 3-Step Builder, Phone OTP, Bill Modal, LPU Map)
-├── style.css         # 197 lines - Modern CSS3 (CSS Variables, Simple Dark Theme, Floral SVG Wallpaper, Grid, Print Styles)
+├── style.css         # Standard Developer Format - Modern CSS3 (CSS Variables, Dark Theme, Floral SVG Wallpaper, Grid, Print Styles)
 ├── script.js         # 193 lines - Pure Vanilla JS (Theme Toggle & LocalStorage, DOM Updates, Live Calculation, Flower Progress Bar, Basic 1234 OTP)
 └── README.md         # Project documentation & Viva examination Q&A guide
 ```
