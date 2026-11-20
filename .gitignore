@@ -6,4 +6,5 @@
 *.zip
 *.pdf
 !PROJECT_REPORT.pdf
+!HTML_CSS_TAGS_GUIDE.pdf
 *.exe
