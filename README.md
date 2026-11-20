@@ -1,5 +1,10 @@
 # 🌸 PetalCraft Florist - Local Fresh Flower Bouquet Builder & Delivery System
-**1st-Semester College Web Development Mini-Project**
+**Course Project for CSE 326 (Internet Programming / Web Development Laboratory)**  
+*School of Computer Science & Engineering, Lovely Professional University (LPU), Punjab*
+
+**Student:** Shaswat Sinha (Reg. No: 12629556) • B.Tech CSE (DS & ML), Semester 1  
+**Faculty Evaluator:** Abass Hassan Sir  
+**🎥 Video Presentation Walkthrough:** **[Watch on YouTube](https://youtu.be/ju_i3vaFXE0)** (`https://youtu.be/ju_i3vaFXE0`)
 
 ---
 

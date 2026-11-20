@@ -14,6 +14,15 @@
 | **Course Code & Title** | **CSE 326: Internet Programming / Web Development Laboratory** |
 | **Faculty & Evaluator** | **Abass Hassan Sir** (School of Computer Science & Engineering) |
 | **University** | **Lovely Professional University (LPU), Punjab** |
+| **Video Presentation Link** | **[Watch on YouTube (Click Here)](https://youtu.be/ju_i3vaFXE0)** (`https://youtu.be/ju_i3vaFXE0`) |
+| **GitHub Repository** | [github.com/shaswat2406/flower-bouquet-builder](https://github.com/shaswat2406/flower-bouquet-builder) |
+| **Live Project Link** | [shaswat2406.github.io/flower-bouquet-builder](https://shaswat2406.github.io/flower-bouquet-builder/) |
+
+---
+
+## 🎥 Project Video Presentation & Demonstration
+* **YouTube Walkthrough URL:** **[https://youtu.be/ju_i3vaFXE0](https://youtu.be/ju_i3vaFXE0)**  
+* **Demonstration Summary:** A complete live demonstration walkthrough recorded by Shaswat Sinha covering the 3-step bouquet builder, live calculation, demo mobile OTP verification (`1234`), printable invoice modal with `@media print`, and the one-click Dark Mode toggle.
 
 ---
 
