@@ -28,7 +28,7 @@
 **You Say:**
 > "Hello everyone, and respected faculty members.  
 > 
-> My name is **[Your Name]**, a first-semester Computer Science and Engineering student at Lovely Professional University. Today, I am excited to present my web development mini-project: **PetalCraft Florist** — a local, fresh flower bouquet builder and campus delivery system.
+> My name is **Shaswat Sinha**, Registration Number **12629556**, pursuing B.Tech. in Computer Science and Engineering with specialization in Data Science and Machine Learning, Semester 1 at Lovely Professional University. Today, I am presenting my Course Mini-Project for **CSE 326 (Internet Programming / Web Development)** under the guidance of **Abass Hassan Sir**: **PetalCraft Florist** — a local, fresh flower bouquet builder and campus delivery system.
 > 
 > The objective of this project is to create an interactive, responsive web application for an on-campus florist shop located near Block 34, allowing students and staff to custom-design fresh flower bouquets stem-by-stem, choose premium packaging, and schedule on-campus courier delivery with zero external dependencies."
 

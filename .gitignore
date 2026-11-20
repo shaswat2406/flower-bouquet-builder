@@ -6,3 +6,4 @@
 *.zip
 *.pdf
 !PROJECT_REPORT.pdf
+*.exe

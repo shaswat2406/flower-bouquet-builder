@@ -1,6 +1,19 @@
 # 🌸 PetalCraft Florist - Local Fresh Flower Bouquet Builder & Delivery System
-**1st-Semester College Web Development Mini-Project Report**  
+**Course Project Report for CSE 326 (Internet Programming / Web Development Laboratory)**  
 *School of Computer Science & Engineering, Lovely Professional University (LPU), Phagwara, Punjab*
+
+---
+
+### 🎓 Academic Submission Details
+| Parameter | Student & Submission Details |
+| :--- | :--- |
+| **Student Name** | **Shaswat Sinha** |
+| **Registration Number** | **12629556** |
+| **Academic Program** | **B.Tech. Computer Science & Engineering (Data Science with ML)** |
+| **Semester** | **Semester 1** |
+| **Course Code & Title** | **CSE 326: Internet Programming / Web Development Laboratory** |
+| **Faculty & Evaluator** | **Abass Hassan Sir** (School of Computer Science & Engineering) |
+| **University** | **Lovely Professional University (LPU), Punjab** |
 
 ---
 
