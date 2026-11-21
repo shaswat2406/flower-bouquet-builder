@@ -85,13 +85,13 @@
 | `display: grid` | Layout (Grid) | Activates 2-dimensional CSS Grid (rows and columns simultaneously). | `.main-container { display: grid; }` |
 | `grid-template-columns` | Layout (Grid) | Defines the widths and number of columns (e.g. `1.7fr 1fr` for 63%/37% split). | `grid-template-columns: 1.7fr 1fr;` |
 | `repeat(auto-fit, minmax())` | Layout (Grid) | Responsive card grid: fits as many columns as possible, each at least `220px` wide. | `repeat(auto-fit, minmax(220px, 1fr))` |
-| `grid-column: 1 / -1` | Layout (Grid) | Spans a grid item across all columns from the first line to the last line. | `.full-width { grid-column: 1 / -1; }` |
+| `flex-direction: column` | Layout (Flexbox) | Stacks child elements vertically one beneath another (e.g. form inputs). | `display: flex; flex-direction: column;` |
 | `place-items: center` | Layout (Grid) | Shorthand that centers children both vertically and horizontally in 1 line. | `display: grid; place-items: center;` |
 | `position: sticky` | Positioning | Keeps the element in regular document flow until scrolled past `top`, then sticks in place. | `.summary-sticky-card { position: sticky; top: 1.5rem; }` |
 | `position: fixed` | Positioning | Removes element from document flow and locks it relative to the browser window. | `.modal-overlay { position: fixed; inset: 0; }` |
 | `inset: 0` | Positioning | Shorthand for `top: 0; right: 0; bottom: 0; left: 0;` (covers 100% of the screen). | `inset: 0;` |
 | `z-index` | Layering | Controls the 3D stacking order; higher numbers appear on top of lower numbers. | `z-index: 9999;` (ensures modal sits above all content) |
-| `backdrop-filter: blur(4px)` | Visual Effects | Applies a frosted-glass blur effect to content sitting behind a semi-transparent modal. | `backdrop-filter: blur(4px);` |
+| `rgba(36, 31, 32, 0.65)` | Color / Alpha | Semi-transparent dark background color overlay that dims the background behind the modal. | `background: rgba(36, 31, 32, 0.65);` |
 | `transform: translateY(-2px)` | Transforms | Lifts an element upward by 2 pixels when hovered for a physical tactile effect. | `.flower-card:hover { transform: translateY(-2px); }` |
 | `transition` | Motion | Animates changes smoothly over a specified duration rather than snapping instantly. | `transition: transform 0.2s, border-color 0.2s;` |
 | `border-radius: 999px` | Border Shape | Creates a perfect pill/capsule shape with completely rounded semicircle ends. | `border-radius: var(--radius-full);` |

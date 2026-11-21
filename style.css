@@ -31,12 +31,10 @@
   padding: 0;
 }
 
-/* 3. Base Body & Floral Pattern Wallpaper */
+/* 3. Base Body & Solid Warm Background */
 body {
   font-family: var(--font-body);
   background-color: var(--bg-page);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23f472b6' fill-opacity='0.22'%3E%3Ccircle cx='15' cy='11.5' r='3.2'/%3E%3Ccircle cx='15' cy='18.5' r='3.2'/%3E%3Ccircle cx='11.5' cy='15' r='3.2'/%3E%3Ccircle cx='18.5' cy='15' r='3.2'/%3E%3C/g%3E%3Ccircle cx='15' cy='15' r='2.2' fill='%23f59e0b' fill-opacity='0.55'/%3E%3Cg fill='%23fb7185' fill-opacity='0.2'%3E%3Ccircle cx='45' cy='42' r='2.8'/%3E%3Ccircle cx='45' cy='48' r='2.8'/%3E%3Ccircle cx='42' cy='45' r='2.8'/%3E%3Ccircle cx='48' cy='45' r='2.8'/%3E%3C/g%3E%3Ccircle cx='45' cy='45' r='1.8' fill='%23f59e0b' fill-opacity='0.55'/%3E%3Ccircle cx='45' cy='15' r='1.8' fill='%2334d399' fill-opacity='0.25'/%3E%3Ccircle cx='15' cy='45' r='1.8' fill='%2334d399' fill-opacity='0.25'/%3E%3C/svg%3E");
-  background-size: 60px 60px;
   color: var(--text-main);
   line-height: 1.5;
   min-height: 100vh;
@@ -319,7 +317,7 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(168, 66, 82, 0.15);
+  outline: none;
 }
 
 .wrap-preview-badge {
@@ -357,13 +355,13 @@ body {
 
 /* 8. Step 3: Delivery Form & Mobile OTP */
 .form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
 .full-width {
-  grid-column: 1 / -1;
+  width: 100%;
 }
 
 .form-group {
@@ -711,7 +709,6 @@ body {
   position: fixed;
   inset: 0;
   background: rgba(36, 31, 32, 0.65);
-  backdrop-filter: blur(4px);
   display: none;
   place-items: center;
   z-index: 9999;
@@ -1083,7 +1080,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  .form-grid,
   .delivery-summary-box {
     grid-template-columns: 1fr;
   }
