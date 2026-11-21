@@ -22,7 +22,7 @@
 
 ## 🎥 Project Video Presentation & Demonstration
 * **YouTube Walkthrough URL:** **[https://youtu.be/ju_i3vaFXE0](https://youtu.be/ju_i3vaFXE0)**  
-* **Demonstration Summary:** A complete live demonstration walkthrough recorded by Shaswat Sinha covering the 3-step bouquet builder, live calculation, demo mobile OTP verification (`1234`), printable invoice modal with `@media print`, and the one-click Dark Mode toggle.
+* **Demonstration Summary:** A complete live demonstration walkthrough recorded by Shaswat Sinha covering the 3-step bouquet builder, live calculation, demo mobile OTP verification (`1234`), printable invoice modal with `@media print`.
 
 ---
 
@@ -35,7 +35,6 @@ The platform provides an intuitive, step-by-step interactive workflow enabling c
 3. Monitor order pricing in real-time through an interactive ₹129 Minimum Order Value (MOV) growth meter.
 4. Validate recipient delivery details and verify mobile numbers via a 4-digit demo OTP (`1234`).
 5. Generate an itemized, printable tax invoice receipt with a unique order tracking code.
-6. Seamlessly switch between Light Mode and Dark Mode with browser preference persistence.
 
 The application is built strictly using standard web fundamentals—**Semantic HTML5, CSS3 (Custom Properties, Flexbox, Grid), and pure Vanilla JavaScript (ES6+)**—with zero external framework overhead, ensuring fast loading speeds, clean code readability, and complete syllabus alignment.
 
@@ -91,7 +90,7 @@ The interface features a 2-column layout on desktop: the left column (`1.7fr`) h
 
 ![Main Interface Overview](assets/01_main_interface.png)
 
-* **Top Site Header**: Displays the brand emblem, title, tagline, farm-fresh badges, helpline click-to-call link, and the Dark/Light theme toggle button.
+* **Top Site Header**: Displays the brand emblem, title, tagline, farm-fresh badges, helpline click-to-call link.
 * **Background Wallpaper**: A lightweight repeating SVG pattern of pastel flowers (`🌸`, `🌼`, `🌱`) renders directly in CSS without loading external image assets.
 
 ---
@@ -118,17 +117,7 @@ To mirror modern on-demand delivery apps (Swiggy, Blinkit, Zomato), checkout is 
 
 ---
 
-### 5.4 One-Click Dark & Light Mode Theme
-Implemented using CSS Custom Properties (`:root`), switching to Dark Mode requires only **9 lines of CSS** overriding root color tokens.
-
-![Dark Mode Theme](assets/04_dark_mode.png)
-
-* Backgrounds adapt to velvet charcoal (`#151012` and `#221a1c`) while maintaining high contrast readability for text, inputs, and modal tables.
-* Theme preference is saved to `localStorage` and automatically restored upon page refresh.
-
----
-
-### 5.5 Safety Backup Version (`basic-version/`)
+### 5.4 Safety Backup Version (`basic-version/`)
 To guarantee confidence during Viva examinations, an ultra-simple backup version is included in a dedicated subfolder (`basic-version/`).
 
 ![Basic Safety Version](assets/05_basic_version.png)
@@ -161,18 +150,6 @@ function changeQty(flower, change) {
 ```
 * **Explanation**: Uses `Math.max(0, ...)` to guarantee quantities never drop below zero. Updates the specific stem counter in the DOM and toggles card visual selection in a single, clean function.
 
-### 6.3 Theme Toggle with LocalStorage Persistence
-```javascript
-function toggleTheme() {
-  const isDark = document.body.classList.toggle('dark-mode');
-  document.getElementById('themeBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
-  localStorage.setItem('petalcraft_theme', isDark ? 'dark' : 'light');
-}
-```
-* **Explanation**: Inverts the theme class on `document.body`, updates the button label icon, and stores the state in `localStorage` for cross-session persistence.
-
----
-
 ## 7. Verification & Test Cases
 
 | Test Case | Scenario Tested | Input Provided | Expected Result | Actual Result | Status |
@@ -184,7 +161,6 @@ function toggleTheme() {
 | **TC-05** | Incorrect OTP Handling | Enter code "9999" | Click "Verify OTP" | Alert: "Wrong OTP! Please enter test OTP: 1234" | **PASSED** |
 | **TC-06** | Past Date Calendar Blocking | Open date picker dropdown | Current date | Past calendar days disabled (`min` attribute) | **PASSED** |
 | **TC-07** | Print Stylesheet Trigger | Click "Print / Save Bill" | Native print command | Hides background UI; displays clean A4 invoice | **PASSED** |
-| **TC-08** | Dark Mode Persistence | Toggle to Dark Mode & reload | Page reload | Dark theme reloads automatically from `localStorage` | **PASSED** |
 
 ---
 

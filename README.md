@@ -18,18 +18,13 @@ All pricing has been localized in **Indian Rupees (₹)** with realistic florist
 ## 📁 Project Structure & Code Line Counts
 ```text
 flower-bouquet-builder/
-├── index.html        # 217 lines - Semantic HTML5 (Header, Dark/Light Switch, 3-Step Builder, Phone OTP, Bill Modal, LPU Map)
-├── style.css         # Standard Developer Format - Modern CSS3 (CSS Variables, Dark Theme, Floral SVG Wallpaper, Grid, Print Styles)
-├── script.js         # 193 lines - Pure Vanilla JS (Theme Toggle & LocalStorage, DOM Updates, Live Calculation, Flower Progress Bar, Basic 1234 OTP)
+├── index.html        # 216 lines - Semantic HTML5 (Header, 3-Step Builder, Phone OTP, Bill Modal, LPU Map)
+├── style.css         # Standard Developer Format - Modern CSS3 (CSS Variables, Floral SVG Wallpaper, Grid, Print Styles)
+├── script.js         # 182 lines - Pure Vanilla JS (DOM Updates, Live Calculation, Flower Progress Bar, Basic 1234 OTP)
 └── README.md         # Project documentation & Viva examination Q&A guide
 ```
 
 ---
-
-## 🌙 Dark & Light Mode Switch
-- **One-Click Theme Toggle**: Located in the top header (`🌙 Dark` / `☀️ Light`).
-- **CSS Custom Properties (`:root`)**: Instead of hardcoding colors, colors are defined as CSS variables (`--bg-page`, `--bg-card`, `--text-main`, `--border`). Toggling the `.dark-mode` class on `document.body` instantly switches the whole site from pastel peach/cream to a sophisticated dark velvet floral aesthetic.
-- **LocalStorage Persistence**: Uses browser `localStorage.setItem('petalcraft_theme', 'dark')` so that the user's theme preference is saved and restored automatically on page refresh.
 
 ## 🌸 Floral Background & Bouquet Progress Bar
 - **Ditsy Floral Pattern Background**: The page features a subtle, lightweight repeating SVG background pattern of delicate pastel flower blossoms (`🌸`, `🌼`, `🌱`) that adds an authentic boutique florist feel while keeping content cards crisp and readable.

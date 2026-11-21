@@ -174,20 +174,9 @@ function closeModal() {
   updateSummary();
 }
 
-// 8. Dark / Light Mode Switch
-function toggleTheme() {
-  const isDark = document.body.classList.toggle('dark-mode');
-  document.getElementById('themeBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
-  localStorage.setItem('petalcraft_theme', isDark ? 'dark' : 'light');
-}
-
-// Initialize minimum date to today, load saved theme, and calculate starting summary
+// Initialize minimum date to today and calculate starting summary
 window.addEventListener('DOMContentLoaded', () => {
   const dateInput = document.getElementById('deliveryDate');
   if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
-  if (localStorage.getItem('petalcraft_theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    document.getElementById('themeBtn').textContent = '☀️ Light';
-  }
   updateSummary();
 });

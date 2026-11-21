@@ -118,19 +118,6 @@ body {
   color: #ffffff;
 }
 
-.theme-btn {
-  background: var(--bg-card);
-  color: var(--text-main);
-  border-color: var(--border);
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.theme-btn:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
 /* 5. Main 2-Column Layout */
 .main-container {
   max-width: 1200px;
@@ -1082,18 +1069,7 @@ body {
   margin-top: 0.2rem;
 }
 
-/* 12. Dark Mode Theme (Clean CSS Variables) */
-body.dark-mode {
-  --bg-page: #151012;
-  --bg-card: #221a1c;
-  --text-main: #f5eeea;
-  --text-muted: #bdafae;
-  --border: #3d2d31;
-  --primary-light: #3a1c22;
-  --botanical-light: #162a1e;
-}
-
-/* 13. Responsive Media Queries & Print Styles */
+/* 12. Responsive Media Queries & Print Styles */
 @media (max-width: 900px) {
   .main-container {
     grid-template-columns: 1fr;
